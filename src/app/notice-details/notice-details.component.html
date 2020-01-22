@@ -1,0 +1,27 @@
+<div style="width: 400px; margin: auto;" class="text-center" >
+    <h5 *ngIf="isReadOnly">Notices Detail</h5>
+    <h3 *ngIf="!isReadOnly">Edit Notice</h3>
+    <form>
+        <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" id="title" required [(ngModel)]="notice.title" name="title" [readonly]="isReadOnly">
+            <span *ngIf="titleNull" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Description</label>
+            <textarea rows="3" class="form-control" id="description" required [(ngModel)]="notice.description" name="description" [readonly]="isReadOnly"></textarea>
+            <span *ngIf="descNull" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Publication Date</label>
+            <input type="text" class="form-control" id="publishDate" required [(ngModel)]="notice.publishDate" name="publishDate" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Preview Date</label>
+            <input type="text" class="form-control" id="visualizationDate" required [(ngModel)]="notice.visualizationDate" name="visualizationDate" readonly>
+        </div>
+    </form>
+</div>
